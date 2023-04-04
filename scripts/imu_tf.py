@@ -3,7 +3,6 @@ import tf2_ros
 from tf.transformations import *
 from sensor_msgs.msg import Imu
 from geometry_msgs.msg import TransformStamped, Vector3, Quaternion
-import test 
 
 def imu_callback(imu_msg):
     # Define a posição e orientação do IMU em relação ao frame base_link

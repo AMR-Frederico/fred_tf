@@ -207,6 +207,6 @@ include_directories(
 catkin_install_python(PROGRAMS scripts/imu_tf.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-catkin_install_python(PROGRAMS scripts/base_link_tf.py
+catkin_install_python(PROGRAMS scripts/ultrasonic_tf.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

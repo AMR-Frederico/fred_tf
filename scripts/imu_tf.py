@@ -7,16 +7,18 @@ import test
 
 def imu_callback(imu_msg):
     # Define a posição e orientação do IMU em relação ao frame base_link
-    imu_pos = Vector3(3.0, 0.0, 0.0)  # exemplo de posição relativa
+    imu_pos = Vector3(0.11, 0.53, 0.24)  # exemplo de posição relativa
     imu_quat = imu_msg.orientation
 
     # Calcula a rotação de 90 graus em torno do eixo Z
     q_rot = Quaternion()
-    q_rot.z = 0.707
-    q_rot.w = 0.707
+    q_rot.x = 0
+    q_rot.y = 0
+    q_rot.z = 0
+    q_rot.w = 0
 
     # Aplica a rotação ao quaternion atual do IMU
-    imu_quat = quaternion_multiply([imu_quat.x, imu_quat.y, imu_quat.z, imu_quat.w], [q_rot.x, q_rot.y, q_rot.z, q_rot.w])
+    #imu_quat = quaternion_multiply([imu_quat.x, imu_quat.y, imu_quat.z, imu_quat.w], [q_rot.x, q_rot.y, q_rot.z, q_rot.w])
 
     # Cria a mensagem de transformação
     transform = TransformStamped()
@@ -24,7 +26,7 @@ def imu_callback(imu_msg):
     transform.header.frame_id = "base_link"
     transform.child_frame_id = "imu_link"
     transform.transform.translation = imu_pos
-    transform.transform.rotation = Quaternion(*imu_quat)
+    transform.transform.rotation = imu_quat
 
     # Publica a mensagem de transformação
     tf2_broadcaster.sendTransform(transform)

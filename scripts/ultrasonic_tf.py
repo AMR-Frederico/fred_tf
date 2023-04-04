@@ -5,7 +5,7 @@ from sensor_msgs.msg import Range
 
 def left_callback(msg): 
     # Define a posição e orientação do sensor ultrassom em relação ao frame base_link
-    sensor_pos = [0.05, 0, 0.1] # Exemplo de posição relativa
+    sensor_pos = [0.225, 0.041, 0.057] # Exemplo de posição relativa
     sensor_quat = [0, 0, 0, 1] # Exemplo de orientação relativa
 
     # Cria a mensagem de transformação
@@ -21,8 +21,8 @@ def left_callback(msg):
 
 def back_callback(msg): 
     # Define a posição e orientação do sensor ultrassom em relação ao frame base_link
-    sensor_pos = [0.05, 0, 0.1] # Exemplo de posição relativa
-    sensor_quat = [0, 0, 0, 1] # Exemplo de orientação relativa
+    sensor_pos = [-0.256, 0, 0.025] # Exemplo de posição relativa
+    sensor_quat = [0, 0, 3.14, 3.14] # Exemplo de orientação relativa
 
     # Cria a mensagem de transformação
     transform = TransformStamped()
@@ -36,8 +36,8 @@ def back_callback(msg):
 
 def right_callback(msg): 
     # Define a posição e orientação do sensor ultrassom em relação ao frame base_link
-    sensor_pos = [0.05, 0, 0.1] # Exemplo de posição relativa
-    sensor_quat = [0, 0, 0, 1] # Exemplo de orientação relativa
+    sensor_pos = [0.243, -0.0654, 0.057] # Exemplo de posição relativa ao base_link
+    sensor_quat = [0, 0, 0, 1]          # Exemplo de orientação relativa ao base_link
 
     # Cria a mensagem de transformação
     transform = TransformStamped()

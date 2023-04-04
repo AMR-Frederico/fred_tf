@@ -6,7 +6,7 @@ from geometry_msgs.msg import TransformStamped, Vector3, Quaternion
 
 def imu_callback(imu_msg):
     # Define a posição e orientação do IMU em relação ao frame base_link
-    imu_pos = Vector3(0.11, 0.53, 0.24)  # exemplo de posição relativa
+    imu_pos = Vector3(0.011, 0.053, 0.024)  # exemplo de posição relativa
     imu_quat = imu_msg.orientation
 
     # Calcula a rotação de 90 graus em torno do eixo Z

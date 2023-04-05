@@ -1,25 +1,27 @@
 import rospy
 import tf2_ros
-import tf2_geometry_msgs
+import tf_conversions
+from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import TransformStamped, Vector3, Quaternion
 
-if __name__ == '__main__':
-    rospy.init_node('lidar_tf_broadcaster')
-    tf2_broadcaster = tf2_ros.TransformBroadcaster()
-
-    # Define a posição e orientação do base_footprint em relação ao frame base_link
-    base_pos = Vector3(0.0, 0.0, 0.944) # exemplo de posição relativa
-    base_quat = Quaternion(0.0, 0.0, 0.0, 1.0) # exemplo de orientação relativa
+def scan_callback(scan):
+    # Define a posição e orientação do rplidar em relação ao frame base_link
+    sensor_pos = [0.225, 0, 0.07] # Exemplo de posição relativa
+    sensor_quat = tf_conversions.transformations.quaternion_from_euler(0, 0, 0) # Exemplo de orientação relativa
 
     # Cria a mensagem de transformação
     transform = TransformStamped()
     transform.header.stamp = rospy.Time.now()
-    transform.header.frame_id = "lidar_link"
-    transform.child_frame_id = "base_link"
-    transform.transform.translation = base_pos
-    transform.transform.rotation = base_quat
+    transform.header.frame_id = "base_link"
+    transform.child_frame_id = "rplidar_link"
+    transform.transform.translation = Vector3(*sensor_pos)
+    transform.transform.rotation = Quaternion(*sensor_quat)
 
     # Publica a mensagem de transformação
-    tf2_broadcaster.sendTransform(transform)
+    tf_broadcaster.sendTransform(transform)
 
+if __name__ == '__main__':
+    rospy.init_node('rplidar_tf_publisher')
+    tf_broadcaster = tf2_ros.TransformBroadcaster()
+    scan_subscriber = rospy.Subscriber('/scan', LaserScan, scan_callback)
     rospy.spin()

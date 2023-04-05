@@ -22,7 +22,7 @@ def left_callback(msg):
 def back_callback(msg): 
     # Define a posição e orientação do sensor ultrassom em relação ao frame base_link
     sensor_pos = [-0.256, 0, 0.025] # Exemplo de posição relativa
-    sensor_quat = [0, 0, 3.14, 3.14] # Exemplo de orientação relativa
+    sensor_quat = [0, 0, 1, 0] # Exemplo de orientação relativa
 
     # Cria a mensagem de transformação
     transform = TransformStamped()

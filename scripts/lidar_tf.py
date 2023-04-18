@@ -13,7 +13,7 @@ def scan_callback(scan):
     transform = TransformStamped()
     transform.header.stamp = rospy.Time.now()
     transform.header.frame_id = "base_link"
-    transform.child_frame_id = "rplidar_link"
+    transform.child_frame_id = "laser_link"
     transform.transform.translation = Vector3(*sensor_pos)
     transform.transform.rotation = Quaternion(*sensor_quat)
 

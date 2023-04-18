@@ -10,7 +10,15 @@
         pkg="fred_tf" 
         type="ultrasonic_tf.py"
         >
-        
-    </node>
+
+    </node>]
+    
+     <node name="laser_tf_brodcaster" 
+        pkg="fred_tf" 
+        type="lidar_tf.py"
+        >
+
+    </node>]
+
           
 </launch>

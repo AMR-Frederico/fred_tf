@@ -213,3 +213,6 @@ catkin_install_python(PROGRAMS scripts/ultrasonic_tf.py
 catkin_install_python(PROGRAMS scripts/lidar_tf.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+catkin_install_python(PROGRAMS scripts/backward_orientation_tf.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

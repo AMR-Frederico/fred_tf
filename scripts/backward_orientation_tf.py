@@ -4,7 +4,7 @@ from geometry_msgs.msg import TransformStamped
 from tf.transformations import quaternion_from_euler, euler_from_quaternion
 
 if __name__ == '__main__':
-    rospy.init_node('backward_frame_publisher')
+    rospy.init_node('backward_tf_brodcaster')
     tf_broadcaster = tf2_ros.TransformBroadcaster()
     
     # Loop principal

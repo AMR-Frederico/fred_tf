@@ -8,7 +8,7 @@ if __name__ == '__main__':
     tf_broadcaster = tf2_ros.TransformBroadcaster()
     
     # Loop principal
-    rate = rospy.Rate(100)  # Frequência de publicação (10 Hz)
+    rate = rospy.Rate(50)  # Frequência de publicação (10 Hz)
     while not rospy.is_shutdown():
         try:
             # Obter a transformação entre os frames "base_link" e "odom"

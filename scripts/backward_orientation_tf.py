@@ -8,7 +8,7 @@ if __name__ == '__main__':
     tf_broadcaster = tf2_ros.TransformBroadcaster()
     
     # Loop principal
-    rate = rospy.Rate(10)  # Frequência de publicação (10 Hz)
+    rate = rospy.Rate(50)  # Frequência de publicação (10 Hz)
     while not rospy.is_shutdown():
         try:
             # Obter a transformação entre os frames "base_link" e "odom"
@@ -19,7 +19,7 @@ if __name__ == '__main__':
             # Configurar a transformação do frame "backward_orientation_link" com base na transformação do frame "base_link"
             backward_transform = TransformStamped()
             backward_transform.header.stamp = rospy.Time.now()
-            backward_transform.header.frame_id = "odom"
+            backward_transform.header.frame_id = "base_footprint"
             backward_transform.child_frame_id = "backward_orientation_link"
             
             # Aplicar a rotação de 180° em torno do eixo Z à orientação da transformação
@@ -43,6 +43,6 @@ if __name__ == '__main__':
             tf_broadcaster.sendTransform(backward_transform)
         
         except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
-            rospy.logwarn("Failed to lookup transform from 'base_link' to 'odom'")
+            rospy.logwarn("Failed to lookup transform from 'base_link' to 'base_footprint'")
         
         rate.sleep()

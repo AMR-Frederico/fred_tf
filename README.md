@@ -3,7 +3,7 @@
 
 ## Fred's current TF Tree
 
-![Fred's TF Tree](/fred_tf/tf_tree/FRED_tf.png)
+![Fred's TF Tree](/tf_tree/FRED_tf.png)
 
 ## Transform System
 In ROS (Robot Operating System), "TF" refers to "Transformations" or "Transform Frame." It is a system used to track and manage transformations between different coordinate systems in a robotic environment. A coordinate system is associated with each part of the robot and objects in the environment.

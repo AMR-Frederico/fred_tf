@@ -8,7 +8,7 @@
 ## Transform System
 In ROS (Robot Operating System), "TF" refers to "Transformations" or "Transform Frame." It is a system used to track and manage transformations between different coordinate systems in a robotic environment. A coordinate system is associated with each part of the robot and objects in the environment.
 
-![TF frames](/fred_tf/tf_tree/tf_frames.png)
+![TF frames](/tf_tree/tf_frames.png)
 
 For example, a distance sensor positioned in the middle of the robot, what is the distance measured in relation to the front of the robot? In other words, TF assists in managing orientation systems, especially between sensors and actuators.
 
@@ -48,11 +48,11 @@ rosrun tf tf_monitor <frame1> <frame2>
 ## Fred's previous TF Tree
 
 1. Iron Cup edition
-![iron-cup](/fred_tf/tf_tree/iron.png)
+![iron-cup](/tf_tree/iron.png)
 
 2. Hector SLAM tutorial
-![hector-tutorial](/fred_tf/tf_tree/hector-tutorial.png)
+![hector-tutorial](/tf_tree/hector-tutorial.png)
 
 3. Fred + Hector SLAM 
-![fred-and-hector](/fred_tf/tf_tree/fred_hector_slam.png)
+![fred-and-hector](/tf_tree/fred_hector_slam.png)
 

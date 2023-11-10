@@ -47,12 +47,12 @@ rosrun tf tf_monitor <frame1> <frame2>
 
 ## Fred's previous TF Tree
 
-1. Iron Cup edition
+### Iron Cup edition
 ![iron-cup](/tf_tree/iron.png)
 
-2. Hector SLAM tutorial
+### Hector SLAM tutorial
 ![hector-tutorial](/tf_tree/hector-tutorial.png)
 
-3. Fred + Hector SLAM 
+### Fred + Hector SLAM
 ![fred-and-hector](/tf_tree/fred_hector_slam.png)
 

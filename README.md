@@ -56,3 +56,7 @@ rosrun tf tf_monitor <frame1> <frame2>
 ### Fred + Hector SLAM
 ![fred-and-hector](/tf_tree/fred_hector_slam.png)
 
+## References
+[🔗 ROS Tutorials](http://wiki.ros.org/tf/Tutorials)
+
+[🔗 The Transform System](https://articulatedrobotics.xyz/ready-for-ros-6-tf/) 
